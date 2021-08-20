@@ -1,13 +1,9 @@
-import { audio } from "./player.js";
-
 const likedSongsContainer = document.querySelector(
   "[data-liked-song-container]"
 );
 const likedSongTemplate = document.querySelector("#liked__songs__template");
-const unlikeSongButton = document.querySelector("[unlike__songs__button]");
 
 const IMAGE_URL = "./tracks/thumbnails";
-const AUDIO_URL = "./tracks/";
 
 export const renderLikedSongs = (track, eventHandler) => {
   const date = new Date();

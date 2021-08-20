@@ -153,11 +153,6 @@ const pauseTrack = song => {
   pause(song);
 };
 
-const shuffle = target => {
-  target.classList.toggle("active");
-  console.log(target.classList.toggle("active"));
-};
-
 const mute = () => {
   const volume = audio.volume;
   audio.muted = !audio.muted;
@@ -499,7 +494,6 @@ skipToNextButton.addEventListener("click", e => {
   const currentPlayPauseTarget =
     currentTrackContainer.querySelector("[data-track-btn]");
   togglePlayPauseTrackContainerBtn(
-    // possible bug with the first argument not being a boolean but it works as it should be
     tracks[currentTrackIndex],
     currentPlayPauseTarget
   );
@@ -531,7 +525,6 @@ skipToPrevButton.addEventListener("click", e => {
     currentTrackContainer.querySelector("[data-track-btn]");
 
   togglePlayPauseTrackContainerBtn(
-    // possible bug with the first argument not being a boolean but it works as it should be
     tracks[currentTrackIndex],
     currentPlayPauseTarget
   );
@@ -627,19 +620,20 @@ audio.addEventListener("ended", e => {
 
 repeatButton.addEventListener("click", () => {
   if (shuffleButton.classList.contains("rotate")) {
-    shuffleButton.classList.toggle("rotate");
+    shuffleButton.classList.remove("rotate");
   }
   audio.loop = !audio.loop;
-  audio.loop && repeatButton.classList.toggle("rotate");
+  audio.loop
+    ? repeatButton.classList.add("rotate")
+    : repeatButton.classList.remove("rotate");
 });
 
 shuffleButton.addEventListener("click", e => {
   if (audio.loop) {
     audio.loop = !audio.loop;
-    repeatButton.classList.toggle("rotate");
+    repeatButton.classList.remove("rotate");
   }
   shuffleButton.classList.toggle("rotate");
-  // shuffle(e.target);
 });
 
 muteButton.addEventListener("click", e => {

@@ -31,13 +31,6 @@ const trackContainerTemplate = document.querySelector(
 const trackListContainer = document.querySelector("[data-tracks-container]");
 
 const IMAGE_URL = "./tracks/thumbnails";
-const MP3_URL = "./tracks/";
-
-// IF localstorage.length > 0 run
-
-export const setupTrackList = () => {
-  tracks.forEach(renderTracks);
-};
 
 const renderTracks = track => {
   const trackContainer = trackContainerTemplate.content.cloneNode(true);
@@ -52,4 +45,8 @@ const renderTracks = track => {
   image.src = `${IMAGE_URL}/${track.thumbnail}`;
 
   trackListContainer.appendChild(trackContainer);
+};
+
+export const setupTrackList = () => {
+  tracks.forEach(renderTracks);
 };
