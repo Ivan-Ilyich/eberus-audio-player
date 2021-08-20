@@ -15,8 +15,8 @@ Basic audio player web app built with [Vanilla-JS](http://vanilla-js.com/).<br>
 - Select and play track from favorites
 
 ##  Possible Extensions
--Queue selected tracks
--Create playlists
--Responsive design for tablet/mobile
--Fetch tracks from third party API
+- Queue selected tracks
+- Create playlists
+- Responsive design for tablet/mobile
+- Fetch tracks from third party API
 
