@@ -36,6 +36,9 @@ html {
 body::-webkit-scrollbar {
   display: none;
 }
+body {
+  user-select: none;
+}
 
 a {
   text-decoration: none;
@@ -81,29 +84,50 @@ p {
       }
     }
 
-    > img {
-      width: 1.5rem;
-      height: auto;
+    .sidebar__option__container {
+      width: 75%;
+      height: 40px;
+      margin-left: @leftMargin - 0.2rem;
       display: flex;
       flex-direction: row;
-      padding: 0.2rem;
-      margin-bottom: 0.5rem;
-      margin-left: 0.8rem;
       align-items: center;
+      transition: 200ms linear;
+      > img {
+        width: 1rem;
+        height: auto;
+      }
+
+      .left__right__margin {
+        margin-left: 6px;
+        margin-right: 3px;
+      }
+      .greater__width {
+        width: 1.7rem;
+        height: auto;
+        padding: 2px;
+      }
+
       > p {
-        padding: 0.3rem;
-        margin-left: @leftMargin - 0.5rem;
+        margin-left: 10px;
         color: white;
       }
     }
 
-    > img:hover {
-      cursor: pointer;
+    .sidebar__option__container:hover {
       background: @hoverGray;
+      cursor: pointer;
 
+      > img {
+        background: @hoverGray;
+      }
       > p {
         background: @hoverGray;
       }
+    }
+
+    .playlist__margin {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
     }
 
     .bi-folder2-open {
@@ -113,7 +137,7 @@ p {
     > hr {
       width: 75%;
       margin-left: @leftMargin - 0.2rem;
-      margin-top: 0.3rem;
+      margin-top: 1rem;
       border-color: @hrBorderGray;
     }
 
